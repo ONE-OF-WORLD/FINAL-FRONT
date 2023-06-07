@@ -10,7 +10,7 @@ const DetailPage = () => {
 
   useEffect(() => {
     axios
-      .get(`http://192.168.205.210:8000/products/${product.id}/detail`)
+      .get(`http://192.168.0.205:8000/products/${product.id}/detail`)
       .then(res => {
         setData(res.data);
       })

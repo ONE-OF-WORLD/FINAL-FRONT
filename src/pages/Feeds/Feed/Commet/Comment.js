@@ -33,7 +33,7 @@ const Comment = ({ feeduserImg, comment, feedId, update }) => {
       setNewComment('');
       if (name === 'delete') {
         axios
-          .delete(`http://192.168.205.210:8000/comment/${id}`, { headers })
+          .delete(`http://192.168.0.205:8000/comment/${id}`, { headers })
           .then(response => {
             update();
           })
@@ -41,7 +41,7 @@ const Comment = ({ feeduserImg, comment, feedId, update }) => {
       } else if (Number(ismodify) !== 0) {
         axios
           .patch(
-            `http://192.168.205.210:8000/comment/${ismodify}`,
+            `http://192.168.0.205:8000/comment/${ismodify}`,
             submitNewcomment,
             { headers }
           )
@@ -53,7 +53,7 @@ const Comment = ({ feeduserImg, comment, feedId, update }) => {
       } else {
         axios
           .post(
-            `http://192.168.205.210:8000/postings/${feedId}/comment`,
+            `http://192.168.0.205:8000/postings/${feedId}/comment`,
             submitNewcomment,
             { headers }
           )

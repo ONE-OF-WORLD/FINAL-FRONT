@@ -7,7 +7,7 @@ const Purchase = () => {
   useEffect(() => {
     const headers = { Authorization: localStorage.getItem('token') };
     axios
-      .get('http://192.168.205.210:8000/users/purchase-history', {
+      .get('http://192.168.0.205:8000/users/purchase-history', {
         headers,
       })
       .then(res => {

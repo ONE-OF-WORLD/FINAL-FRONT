@@ -8,7 +8,7 @@ const BookMark = () => {
   useEffect(() => {
     const headers = { Authorization: localStorage.getItem('token') };
     axios
-      .get('http://192.168.205.210:8000/bookmarks/list', { headers })
+      .get('http://192.168.0.205:8000/bookmarks/list', { headers })
       .then(res => {
         console.log(res);
         setData(res.data.LIST);

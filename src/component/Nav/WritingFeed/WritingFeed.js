@@ -48,7 +48,7 @@ const WriteFeed = ({ onOffModal }) => {
     };
 
     axios
-      .post('http://192.168.205.210:8000/posting', formData, { headers })
+      .post('http://192.168.0.205:8000/posting', formData, { headers })
       .then(response => {
         onOffModal('write');
         window.location.reload();

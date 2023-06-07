@@ -12,7 +12,7 @@ const PaypalButton = props => {
     const headers = { Authorization: localStorage.getItem('token') };
     axios
       .post(
-        'http://192.168.205.210:8000/users/purchase-history',
+        'http://192.168.0.205:8000/users/purchase-history',
         {
           product_id: Number(productId),
           price: price,

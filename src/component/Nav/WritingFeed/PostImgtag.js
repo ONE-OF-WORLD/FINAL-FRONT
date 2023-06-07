@@ -29,7 +29,7 @@ const DraggableButtonInCard = ({ url, handleButtonData, buttonData }) => {
       Authorization: localStorage.getItem('token'),
     };
     axios
-      .get('http://192.168.205.210:8000/users/purchase-history', { headers })
+      .get('http://192.168.0.205:8000/users/purchase-history', { headers })
       .then(response => {
         setPurchaseProduct(response.data.RESPONSE);
       })

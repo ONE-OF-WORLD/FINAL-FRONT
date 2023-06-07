@@ -54,7 +54,7 @@ const Nav = () => {
       persistAccessToken: false,
       success: async function (response) {
         const res = await axios.post(
-          'http://192.168.205.210:8000/users/signin',
+          'http://192.168.0.205:8000/users/signin',
           {
             access_token: response.access_token,
           }
@@ -98,7 +98,7 @@ const Nav = () => {
       setIsSignup(false);
 
       const options = axios.post(
-        `http://192.168.205.210:8000/users/${userInfo.userId}/nickname`,
+        `http://192.168.0.205:8000/users/${userInfo.userId}/nickname`,
         { nickname: userInfo.nickname }
       );
     }
