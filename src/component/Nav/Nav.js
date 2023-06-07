@@ -53,12 +53,9 @@ const Nav = () => {
       scope: 'profile_nickname , account_email',
       persistAccessToken: false,
       success: async function (response) {
-        const res = await axios.post(
-          'http://192.168.0.205:8000/users/signin',
-          {
-            access_token: response.access_token,
-          }
-        );
+        const res = await axios.post('http://192.168.0.205:8000/users/signin', {
+          access_token: response.access_token,
+        });
         localStorage.setItem('token', res.data.token);
         localStorage.setItem('userId', res.data.user_id);
         localStorage.setItem('nickname', res.data.nickname);
