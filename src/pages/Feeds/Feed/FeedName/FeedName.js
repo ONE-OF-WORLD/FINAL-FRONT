@@ -23,7 +23,7 @@ const FeedName = ({
 
       axios
         .post(
-          'http://192.168.0.205:8000/users/follow',
+          'http://192.168.0.205:80/users/follow',
           { user_id: feeduserId },
           { headers }
         )

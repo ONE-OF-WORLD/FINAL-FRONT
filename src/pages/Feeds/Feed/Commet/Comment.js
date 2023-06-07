@@ -53,7 +53,7 @@ const Comment = ({ feeduserImg, comment, feedId, update }) => {
       } else {
         axios
           .post(
-            `http://192.168.0.205:8000/postings/${feedId}/comment`,
+            `http://192.168.0.205/postings/${feedId}/comment`,
             submitNewcomment,
             { headers }
           )

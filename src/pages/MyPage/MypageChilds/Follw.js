@@ -9,7 +9,7 @@ const Follow = () => {
   useEffect(() => {
     const headers = { Authorization: localStorage.getItem('token') };
     axios
-      .get('http://192.168.0.205:8000/users/follow', {
+      .get('http://192.168.0.205:80/users/follow', {
         headers,
       })
       .then(res => {

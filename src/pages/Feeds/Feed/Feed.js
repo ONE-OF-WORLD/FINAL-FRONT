@@ -41,7 +41,7 @@ const Feed = ({ feedInfo, update, feeduserImg, followListUpdate }) => {
     if (localStorage.getItem('nickname') !== 'null') {
       axios({
         method: 'post',
-        url: `http://192.168.0.205:8000/postings/${feedId}/bookmark`,
+        url: `http://192.168.0.205/postings/${feedId}/bookmark`,
 
         headers: { Authorization: localStorage.getItem('token') },
       })

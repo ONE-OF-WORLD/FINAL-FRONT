@@ -17,7 +17,7 @@ const Main = () => {
   const followListUpdate = () => {
     const headers = { Authorization: localStorage.getItem('token') };
     axios
-      .get('http://192.168.0.205:8000/users/follow', {
+      .get('http://192.168.0.205:80/users/follow', {
         headers,
       })
       .then(res => {
@@ -34,7 +34,7 @@ const Main = () => {
         Authorization: localStorage.getItem('token'),
       };
       axios
-        .get(`http://192.168.0.205:8000/postings/feed/private?page=1`, {
+        .get(`http://192.168.0.205/postings/feed/private?page=1`, {
           headers,
         })
         .then(response => {
@@ -43,7 +43,7 @@ const Main = () => {
         .catch(err => console.error(err));
     } else {
       axios
-        .get(`http://192.168.0.205:8000/postings/feed/public?page=1`)
+        .get(`http://192.168.0.205/postings/feed/public?page=1`)
         .then(response => {
           setHAS_NEXT(response.data.HAS_NEXT);
 
@@ -65,7 +65,7 @@ const Main = () => {
         };
         axios
           .get(
-            `http://192.168.0.205:8000/postings/feed/private?page=${pagenation}`,
+            `http://192.168.0.205/postings/feed/private?page=${pagenation}`,
             { headers }
           )
           .then(response => {
@@ -79,9 +79,7 @@ const Main = () => {
           .catch(err => console.error(err));
       } else {
         axios
-          .get(
-            `http://192.168.0.205:8000/postings/feed/public?page=${pagenation}`
-          )
+          .get(`http://192.168.0.205/postings/feed/public?page=${pagenation}`)
           .then(response => {
             setHAS_NEXT(response.data.HAS_NEXT);
             feedData.length === 0
